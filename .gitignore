@@ -1,0 +1,15 @@
+#environments files
+.env
+
+#Byte-compiled / optimized /DLL files
+*.pyc
+__pycache__/
+
+#Log files
+*.log
+*.log.*
+
+ #unit test / coverage reports
+.coverage
+.coverage.*
+htmlcov/
