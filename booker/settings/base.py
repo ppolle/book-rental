@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     #booker apps
     'booker.apps.libraryapp',
     'booker.apps.rentalapp',
+    #third party apps
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
