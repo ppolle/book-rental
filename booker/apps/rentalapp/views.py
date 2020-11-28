@@ -1,6 +1,7 @@
-from booker.apps.libraryapp.models import Book
 from booker.apps.rentalapp.cart import Cart
 from django.shortcuts import render, redirect
+from booker.apps.libraryapp.models import Book
+from booker.apps.rentalapp.forms import RentBookForm
 
 # Create your views here.
 def index(request):
@@ -15,7 +16,19 @@ def book_details(request, book_id):
 	view book details
 	'''
 	book = Book.objects.get(id=book_id)
-	return render(request, 'rentalapp/book_details.html', {"book":book})
+	if request.method == 'POST':
+		form = RentBookForm(request.POST)
+		if form.is_valid():
+			start_date = form.cleaned_data['start_date']
+			stop_date = form.cleaned_data['end_date']
+
+			cart = Cart(request)
+			cart.add(book,start_date, stop_date)
+			return redirect('index')
+	else:
+		form = RentBookForm()
+
+	return render(request, 'rentalapp/book_details.html', {"book":book, "form":form})
 
 def rent_book(request, book_id):
 	'''

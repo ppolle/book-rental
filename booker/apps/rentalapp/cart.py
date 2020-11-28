@@ -1,6 +1,5 @@
 from django.conf import settings
 
-
 class Cart:
 	def __init__(self, request):
 		self.session = request.session
@@ -18,7 +17,7 @@ class Cart:
 		rent = book.rent_book(start_date,stop_date)
 
 		if book_id not in self.cart:
-			self.cart[book_id] = {"rent":rent,"start_date":start_date,"stop_date":stop_date}
+			self.cart[book_id] = {"rent":rent,"start_date":str(start_date),"stop_date":str(stop_date)}
 		else:
 			self.cart[book_id]["rent"] = rent
 			self.cart[book_id]["start_date"] = start_date

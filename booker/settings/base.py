@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'booker.apps.rentalapp',
     #third party apps
     'bootstrap3',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
