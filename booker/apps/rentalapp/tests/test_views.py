@@ -30,3 +30,10 @@ class ViewTests(TestCase):
 
 		self.assertEqual(len(self.session['cart']), 1)
 		self.assertEqual(response.status_code, 200)
+
+	def clear_all_session(self):
+		url = reverse('clear_cart')
+		response = self.client.get(url)
+
+		self.assertEqual(len(self.session['cart']), 0)
+		self.assertEqual(response.status_code, 200)
