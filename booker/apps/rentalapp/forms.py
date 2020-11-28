@@ -14,7 +14,7 @@ class RentBookForm(forms.Form):
 		return self.cleaned_data['start_date']
 
 	def clean_end_date(self):
-		if self.cleaned_data['end_date'] <= self.cleaned_data['start_date']:
+		if self.cleaned_data['start_date'] > self.cleaned_data['end_date']:
 			raise forms.ValidationError('End date can only come after start date')
 
 		return self.cleaned_data['end_date']
