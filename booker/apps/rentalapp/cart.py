@@ -1,5 +1,5 @@
 from django.conf import settings
-
+from booker.apps.rentalapp.models import Book
 class Cart:
 	def __init__(self, request):
 		self.session = request.session

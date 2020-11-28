@@ -19,5 +19,7 @@ from booker.apps.rentalapp import views
 urlpatterns = [
     path('', views.index,name='index'),
     path('book/<int:book_id>/', views.book_details, name='book_details'),
+    path('book/delete/<int:book_id>/', views.delete_cart_item, name='delete_cart_item'),
+    path('clear-cart/', views.clear_cart_items, name='clear_cart'),
    
 ]

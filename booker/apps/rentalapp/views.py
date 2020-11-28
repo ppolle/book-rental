@@ -8,8 +8,9 @@ def index(request):
 	'''
 	Render the index page
 	'''
+	cart  = Cart(request)
 	books =  Book.objects.all()
-	return render(request, 'rentalapp/index.html', {"books":books})
+	return render(request, 'rentalapp/index.html', {"books":books,"cart":cart})
 
 def book_details(request, book_id):
 	'''
@@ -36,3 +37,21 @@ def rent_book(request, book_id):
 	'''
 	cart = Cart()
 	pass
+
+def delete_cart_item(request, book_id):
+	'''
+	Delete cart item
+	'''
+	cart = Cart(request)
+	book = Book.objects.get(id=book_id)
+	cart.remove(book)
+
+	return redirect('index')
+
+def clear_cart_items(request):
+	'''
+	Clear all the items in the cart list
+	'''
+	cart = Cart(request)
+	cart.clear()
+	return redirect('index')
