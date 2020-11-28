@@ -32,15 +32,10 @@
   <body>
     {% include 'includes/_nav.html' %}
     
-    <div class="container">
-      <section class="text-right">{% now "l, jS F Y, H:i:s" %}</section>
-      <h3>{% block title %}{% endblock %}</h3>
-  
-   
-
+    <div class="container"> 
+ 
       {% block content %}
       {% endblock %}
-
 
     </div>
 

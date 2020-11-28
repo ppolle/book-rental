@@ -8,37 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{% url 'index' %}">Habari</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Booker</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Status</a></li>
-          {% if request.user.is_authenticated %}
-          <li><a href="">API Documentation</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{request.user.get_full_name|title}}<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="">Profile</a></li>
-              <li><a href="">Logout</a></li>
-            </ul>
-          </li>
-         {% else %}
-         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Developers <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="" target="_blank">API Documentation</a></li>
-              <li><a href="">Create Account</a></li>
-              <li><a href="">Login</a></li>
-            </ul>
-          </li>
-         {% endif %}
-
-
-
-
+        <li><a href="">Book Cart <span class="badge">{{request.session.cart|length}}</span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
