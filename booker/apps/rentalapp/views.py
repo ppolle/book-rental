@@ -1,6 +1,8 @@
+from django.db import transaction
 from booker.apps.rentalapp.cart import Cart
 from django.shortcuts import render, redirect
 from booker.apps.libraryapp.models import Book
+from booker.apps.rentalapp.models import Rent, RentItem
 from booker.apps.rentalapp.forms import RentBookForm
 
 # Create your views here.
@@ -54,4 +56,21 @@ def clear_cart_items(request):
 	'''
 	cart = Cart(request)
 	cart.clear()
+	return redirect('index')
+
+def checkout(request):
+	'''
+	Record all cart items as having been booked
+	'''
+	cart = Cart(request)
+	if len(cart) > 0:
+		with transaction.atomic():
+			rent = Rent.objects.create(total=cart.total_rental_cost())
+
+			for item in cart:
+				print(type(item['start_date']))
+				RentItem.objects.create(
+    rent=rent, book=item['book'], start_date=item['start_date'], stop_date=item['stop_date'])
+		cart.clear()
+
 	return redirect('index')

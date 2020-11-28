@@ -21,9 +21,7 @@ class Book(models.Model):
 		today = date.today()
 		if start_date and stop_date >= today:
 			dates_elapsed = stop_date-start_date
-		
-			days_elapsed = dates_elapsed.days
-			rent_cost = days_elapsed
+			rent_cost = dates_elapsed.days
 		
 		return rent_cost
 

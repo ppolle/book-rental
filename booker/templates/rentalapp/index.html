@@ -37,7 +37,7 @@
         {%endfor%}
       </table>
       {% if cart|length > 0 %}
-      <a href="{% url 'clear_cart' %}" class="btn btn-warning btn-sm">Clear Cart List</a><strong class="pull-right">Total Cost: ${{cart.total_rental_cost}}</strong>
+      <a href="{% url 'checkout' %}" class="btn btn-success btn-sm">Checkout</a> <a href="{% url 'clear_cart' %}" class="btn btn-warning btn-sm">Clear Cart List</a><strong class="pull-right">Total Cost: ${{cart.total_rental_cost}}</strong>
       {%else%}
       <strong>You have no Books in your cart</strong>
       {%endif%}
