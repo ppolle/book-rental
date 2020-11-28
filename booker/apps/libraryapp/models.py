@@ -8,6 +8,7 @@ class Book(models.Model):
 	Hold all Book information
 	'''
 	title = models.CharField(max_length=1000)
+	genre = models.ForeignKey("BookGenre", on_delete=models.CASCADE)
 	description = models.CharField(max_length=1000)
 	timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -24,4 +25,15 @@ class Book(models.Model):
 			rent_cost = dates_elapsed.days
 		
 		return rent_cost
+
+class BookGenre(models.Model):
+	'''
+	Holds all Book Type Information
+	'''
+	name = models.CharField(max_length=1000)
+	daily_rate = models.DecimalField(max_digits=10, decimal_places=2)
+	timestamp = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return self.name
 
