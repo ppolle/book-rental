@@ -14,7 +14,7 @@ class Book(models.Model):
 	def __str__(self):
 		return self.title
 
-	def rent_book(self, start_date, stop_date):
+	def calculate_cost(self, start_date, stop_date):
 		'''
 		Rent a book details
 		'''

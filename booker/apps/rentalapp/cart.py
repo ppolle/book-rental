@@ -14,7 +14,7 @@ class Cart:
 		Add a book item to the cart
 		'''
 		book_id = book.id
-		rent = book.rent_book(start_date,stop_date)
+		rent = book.calculate_cost(start_date,stop_date)
 
 		if book_id not in self.cart:
 			self.cart[book_id] = {"rent":rent,"start_date":str(start_date),"stop_date":str(stop_date)}
