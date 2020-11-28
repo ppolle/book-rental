@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+          {{book.title}}
+      </h4>
+    </div>
+    <div class="panel-body">
+    	<p>{{book.description}}</p>      
+    </div>
+  </div>
+	
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-5"></div>
+{% endblock %}
