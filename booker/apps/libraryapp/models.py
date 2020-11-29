@@ -8,7 +8,7 @@ class Book(models.Model):
 	Hold all Book information
 	'''
 	title = models.CharField(max_length=1000)
-	genre = models.ForeignKey("BookGenre", on_delete=models.CASCADE)
+	genre = models.ForeignKey("BookType", on_delete=models.CASCADE)
 	description = models.CharField(max_length=1000)
 	timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -20,13 +20,14 @@ class Book(models.Model):
 		Rent a book details
 		'''
 		today = date.today()
+		daily_rate = self.genre.daily_rate
 		if start_date and stop_date >= today:
 			dates_elapsed = stop_date-start_date
-			rent_cost = dates_elapsed.days
+			rent_cost = dates_elapsed.days*daily_rate
 		
 		return rent_cost
 
-class BookGenre(models.Model):
+class BookType(models.Model):
 	'''
 	Holds all Book Type Information
 	'''
