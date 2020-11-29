@@ -33,13 +33,6 @@ def book_details(request, book_id):
 
 	return render(request, 'rentalapp/book_details.html', {"book":book, "form":form})
 
-def rent_book(request, book_id):
-	'''
-	Add book details to rent data
-	'''
-	cart = Cart()
-	pass
-
 def delete_cart_item(request, book_id):
 	'''
 	Delete cart item

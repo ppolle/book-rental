@@ -1,0 +1,28 @@
+[
+	{
+		"model": "libraryapp.BookType",
+	    "pk": 1,
+	    "fields": {
+	      "name": "regular",
+	      "daily_rate": "1.5",
+	      "timestamp": "2019-07-01T06:50:12.913Z"
+	    }
+	},
+	{
+		"model": "libraryapp.BookType",
+	    "pk": 2,
+	    "fields": {
+	      "name": "fiction",
+	      "daily_rate": "3",
+	      "timestamp": "2019-07-01T06:50:12.913Z"}
+	},
+	{
+		"model": "libraryapp.BookType",
+	    "pk": 3,
+	    "fields": {
+	      "name": "novel",
+	      "daily_rate": "1.5",
+	      "timestamp": "2019-07-01T06:50:12.913Z"
+    }
+	}
+]
