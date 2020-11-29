@@ -19,12 +19,25 @@ class Book(models.Model):
 		'''
 		Rent a book details
 		'''
-		today = date.today()
-		daily_rate = self.genre.daily_rate
-		if start_date and stop_date >= today:
-			dates_elapsed = stop_date-start_date
-			rent_cost = dates_elapsed.days*daily_rate
-		
+		dates_elapsed = stop_date-start_date
+		days_elapsed = dates_elapsed.days
+
+		if self.genre.minimum_days==0 and self.genre.early_rates==0:
+			rent_cost = self.genre.daily_rate*days_elapsed
+		elif self.genre.minimum_days>0 and self.genre.early_rates==0:
+			minimum_rent=self.genre.minimum_days*self.genre.daily_rate
+			if days_elapsed <= self.genre.minimum_days:
+				rent_cost = minimum_rent
+			else:
+				rent_cost = days_elapsed*self.genre.daily_rate
+		else:
+			minimum_rent=self.genre.minimum_days*self.genre.early_rates
+			if days_elapsed<=self.genre.minimum_days:
+				rent_cost=minimum_rent
+			else:
+				normal_rent = (days_elapsed-self.genre.minimum_days)*self.genre.daily_rate
+				rent_cost=minimum_rent+normal_rent
+
 		return rent_cost
 
 class BookType(models.Model):
