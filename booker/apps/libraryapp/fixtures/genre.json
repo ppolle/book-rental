@@ -5,6 +5,8 @@
 	    "fields": {
 	      "name": "regular",
 	      "daily_rate": "1.5",
+	      "early_rates":"1",
+	      "minimum_days":"2",
 	      "timestamp": "2019-07-01T06:50:12.913Z"
 	    }
 	},
@@ -14,6 +16,8 @@
 	    "fields": {
 	      "name": "fiction",
 	      "daily_rate": "3",
+	      "early_rates":"0",
+	      "minimum_days":"0",
 	      "timestamp": "2019-07-01T06:50:12.913Z"}
 	},
 	{
@@ -22,6 +26,8 @@
 	    "fields": {
 	      "name": "novel",
 	      "daily_rate": "1.5",
+	      "early_rates":"0",
+	      "minimum_days":"3",
 	      "timestamp": "2019-07-01T06:50:12.913Z"
     }
 	}

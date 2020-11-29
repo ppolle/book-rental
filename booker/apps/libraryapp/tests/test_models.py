@@ -25,5 +25,3 @@ class LibraryAppTests(TestCase):
 
 		cost = book.calculate_cost(start_date, stop_date)
 		self.assertEqual(cost,4.5)
-
-
