@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load bootstrap3 %}
+{% block content %}
+<div class="col-md-7">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+          {{book.title}}
+      </h4>
+    </div>
+    <div class="panel-body">
+    	<p>{{book.description}}</p>      
+    </div>
+  </div>
+	
+</div>
+
+<div class="col-md-5">
+        <form method="post">
+        {%csrf_token %}
+        <div class="well">
+          {% bootstrap_form form %}
+
+          <button type="submit" class="btn btn-primary">
+            <span class="fa fa-money"></span> Rent
+          </button>
+          
+        </div>
+      </form>
+</div>
+{% endblock %}
