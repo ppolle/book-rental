@@ -30,7 +30,7 @@ class RentalAppModelTests(TestCase):
 		rent.save()
 
 		item = RentItem.objects.create(rent=rent, 
-			book=book_3, 
+			book=self.book_4, 
 			start_date=start_date, 
 			stop_date=end_date)
 
