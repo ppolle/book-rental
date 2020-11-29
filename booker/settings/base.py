@@ -31,6 +31,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #booker apps
+    'booker.apps.libraryapp',
+    'booker.apps.rentalapp',
+    #third party apps
+    'bootstrap3',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -114,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Rent session variable
+CART_SESSION_ID = 'cart'

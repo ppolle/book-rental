@@ -1,0 +1,82 @@
+[
+  {
+    "model": "libraryapp.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Grass is Always Greener",
+      "genre":1,
+      "description": "This ingenious tale examines the ambitions and petty jealousies of the staff at Critchley's Bank. From the doorman to the personnel manager, to Sir William, the bank's sorrowful chairman. Archer knits a panoply of characters with deft narrative skill in a story which is as revealing as it is observant. Taken from his anthology To Cut a Long Story Short, his other short story anthologies include A Quiver Full of Arrows, Twelve Red Herrings and A Twist in the Tale.",
+      "timestamp": "2019-07-01T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 2,
+    "fields": {
+      "title": "Murder!",
+      "genre":2,
+      "description": "Two men meet in a seaside resort. What follows is murder. What's discovered isn't all it seems to be... Arnold Bennett was born in 1867. He wrote an influential book column for the Evening Standard from 1926 until his death in London in 1931. He was a great admirer of the French realists and his most successful novels, Clayhanger, Hilda Lessways, and These Twain, set in his native Staffordshire, show the literary influence of Flaubert and Balzac on his work. He also wrote plays and essays, as well as many short stories.",
+      "timestamp": "2019-07-02T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 3,
+    "fields": {
+      "title": "An Occurrence at Owl Creek Bridge One of the Missing",
+      "genre":3,
+      "description": "Ambrose Bierce was an American journalist, newspaper editor, misanthrope, writer and wit. His two short story masterpieces, An Occurrence at Owl Creek Bridge and One of the Missing, are both brilliant examples of American short fiction at its sharpest. Each is a gripping action tale set in the American Civil War during which Bierce himself saw action at Shiloh and Chickamauga. He was seriously wounded on Kenesaw Mountain in 1864 and promoted to Major in 1867. His death remains an unsolved mystery, - the most likely theory is that he was a fatality of the siege at Ojinaga during the Mexican revolution of 1914.",
+      "timestamp": "2019-07-03T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 4,
+    "fields": {
+      "title": "A Boy at Seven, Fear and Loathing in Aspen",
+      "genre":1,
+      "description": "John Bidwell's two satirical short story journals are loosely based on real incidents in the author's life. A Boy at Seven is set in a Jesuit boarding school in the early 1960s where some of the boys, fed up with their hateful and sadistic Prefect of Discipline, Father John Kilbracken, hatch a plan to humiliate him in front of all. In Fear and Loathing in Aspen, the author observes the strange behaviour of Americans at the famous Colorado skiing resort of Aspen and follows one of them, a hairy billionaire called Abe Fineblown, on a gung-ho shooting mission to Kenya.",
+      "timestamp": "2019-07-04T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 5,
+    "fields": {
+      "title": "The Higgler",
+      "genre":2,
+      "description": "Alfred Edgar Coppard, the son of a Kentish journeyman tailor and a hosteler's daughter, wrote his first short story at the age of 43 and achieved fame in his lifetime, for his vivid depictions of the English countryside and its rural characters. The Higgler, which first appeared in his anthology Fishmonger's Fiddle in 1925, is one of his finest works; a strangely unpredictable tale of an itinerant dealer in poultry and eggs whose emotional involvement with the mother and daughter of an isolated farmhouse on the moors threatens to become an obsession.",
+      "timestamp": "2019-07-05T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 6,
+    "fields": {
+      "title": "The Open Boat",
+      "genre":3,
+      "description": "The Open Boat is a captivating short story based on a real-life event. On January 1st 1897, the great American writer, Stephen Crane, was sailing in the steamer, Commadore, which was running arms from Florida to rebels resisting Spanish domination in Cuba. Crane was a war correspondent at the time. The Commodore sank and Crane was cast adrift in an open boat with three or four crew members, including the captain, Edward Murphy. This the dramatic story of what happened next.",
+      "timestamp": "2019-07-06T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 7,
+    "fields": {
+      "title": "The Great Switcheroo ",
+      "genre":1,
+      "description": "Roald Dahl was a master story teller who during his lifetime achieved phenomenal success with tales both for children and adults. The Great Switcheroo, which first appeared in Dahl's diminutive collection, Switch Bitch, is a decidedly adult fable. Vic Hammond is for his neighbour, Samantha Rainbow. But Vic is married, and so is Samantha (to Vic's best friend, Jerry). Undeterred the lecherous Mr Hammond devises a very strange scheme.",
+      "timestamp": "2019-07-07T06:50:12.913Z"
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 8,
+    "fields": {
+      "title": "The Speckled Band",
+      "genre":2,
+      "description": "In one of the most thrilling and inventive of all Sherlock Holmes stories, the Baker Street detective and his trusted friend, Dr. Watson, are called to the aid of a mysterious lady who is convinced that her life is in danger. Sir Arthur Conan Doyle creates an inimitable atmosphere of intrigue and suspense leading to an investigation at Stoke Moran, the creepy Surrey mansion of a certain Dr Grimesby Roylott.",
+      "timestamp": "2019-07-08T06:50:12.913Z"
+    }
+  }
+]
