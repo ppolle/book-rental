@@ -1,9 +1,11 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
+class DateInput(forms.DateInput):
+	input_type = 'date'
 class RentBookForm(forms.Form):
-	start_date = forms.DateField()
-	end_date = forms.DateField()
+	start_date = forms.DateField(widget=DateInput)
+	end_date = forms.DateField(widget=DateInput)
 
 	def clean_start_date(self):
 		from datetime import date
