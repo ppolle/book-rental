@@ -17,11 +17,11 @@ class Cart:
 		rent = book.calculate_cost(start_date,stop_date)
 
 		if book_id not in self.cart:
-			self.cart[book_id] = {"rent":rent,"start_date":str(start_date),"stop_date":str(stop_date)}
+			self.cart[book_id] = {"rent":float(rent),"start_date":str(start_date),"stop_date":str(stop_date)}
 		else:
 			self.cart[book_id]["rent"] = rent
-			self.cart[book_id]["start_date"] = start_date
-			self.cart[book_id]["stop_date"] = stop_date
+			self.cart[book_id]["start_date"] = str(start_date)
+			self.cart[book_id]["stop_date"] = str(stop_date)
 
 		self.save()
 
@@ -52,7 +52,7 @@ class Cart:
 		'''
 		Get total cost of renting all availble books
 		'''
-		return sum(item['rent'] for item in self.cart.values())
+		return sum(float(item['rent']) for item in self.cart.values())
 
 	def __iter__(self):
 		book_ids = self.cart.keys()
