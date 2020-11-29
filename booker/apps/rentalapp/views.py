@@ -67,3 +67,10 @@ def checkout(request):
 		cart.clear()
 
 	return redirect('index')
+
+def view_cart(request):
+	'''
+	View cart items
+	'''
+	cart = Cart(request)
+	return render(request, 'rentalapp/cart.html', {'cart':cart})
