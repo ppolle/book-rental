@@ -8,7 +8,8 @@ class LibraryAppTests(TestCase):
 		fiction_type = BookType.objects.create(name='fiction', daily_rate=3.00)
 
 		self.assertEqual(BookType.objects.all().count(), 2)
-		self.assertEqual(novel_type.name, 'novel')
+		self.assertEqual(str(novel_type), 'novel')
+		self.assertIsInstance(novel_type.name, str)
 
 	def test_book_creation(self):
 		novel = BookType.objects.create(name='novel',daily_rate=1.50)
