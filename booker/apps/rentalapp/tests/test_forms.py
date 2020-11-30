@@ -32,3 +32,27 @@ class RentBookFormTests(TestCase):
 			error = dict(form.errors.items())
 			self.assertTrue(error['end_date'][0], 'End date can only come after start date')
 		self.assertFalse(form.is_valid())
+
+	def test_end_date_in_the_past(self):
+		start_date = date.today()+timedelta(days=5)
+		end_date = date.today()-timedelta(days=3)
+
+		data={"start_date":start_date,"end_date":end_date}
+		form=RentBookForm(data=data)
+		
+		if form.errors.items():
+			error = dict(form.errors.items())
+			self.assertTrue(error['end_date'][0], 'This date cannot be in the past')
+		self.assertFalse(form.is_valid())
+
+	def test_start_date_in_the_past(self):
+		start_date = date.today()-timedelta(days=1)
+		end_date = date.today()-timedelta(days=3)
+
+		data={"start_date":start_date,"end_date":end_date}
+		form=RentBookForm(data=data)
+		
+		if form.errors.items():
+			error = dict(form.errors.items())
+			self.assertTrue(error['end_date'][0], 'The start date cannot be in the past')
+		self.assertFalse(form.is_valid())

@@ -134,4 +134,5 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=booker.apps.libraryapp,booker.apps.rentalapp',
+    '--cover-html',
 ]

@@ -15,6 +15,7 @@ class LibraryAppTests(TestCase):
 		book = Book.objects.create(title='a man of the people', genre=novel, description='A man popular among men')
 
 		self.assertEqual(Book.objects.all().count(), 1)
+		self.assertEqual(str(book),book.title)
 
 	def test_calculate_cost(self):
 		novel = BookType.objects.create(name='novel',daily_rate=1.50)
