@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+BOOKER_SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
 
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'booker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASS')
+        'NAME': config('BOOKER_DB_NAME'),
+        'USER': config('BOOKER_DB_USER'),
+        'PASSWORD': config('BOOKER_DB_PASS')
     }
 }
 
