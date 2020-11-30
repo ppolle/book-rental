@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     #third party apps
     'bootstrap3',
     'widget_tweaks',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,12 @@ STATIC_URL = '/static/'
 
 #Rent session variable
 CART_SESSION_ID = 'cart'
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=booker.apps.libraryapp,booker.apps.rentalapp',
+]
