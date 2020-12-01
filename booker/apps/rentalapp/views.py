@@ -74,3 +74,6 @@ def view_cart(request):
 	'''
 	cart = Cart(request)
 	return render(request, 'rentalapp/cart.html', {'cart':cart})
+
+def view_test_coverage(request):
+	return render(request, 'cover/index.html')

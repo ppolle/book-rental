@@ -4,4 +4,4 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('BOOKER_SECRET_KEY')

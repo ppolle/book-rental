@@ -65,12 +65,14 @@ class RentalAppViewTests(TestCase):
 		self.assertEqual(len(session[settings.CART_SESSION_ID]), 2)
 
 		url = reverse('clear_cart')
-		response = self.client.get(url, follow=True)
+		response = self.client.get(url)
 
 		self.assertEqual(len(session[settings.CART_SESSION_ID]), 0)
 		self.assertEqual(response.status_code, 200)
 
 	def test_session_is_cleared_on_checkout(self):
+		session = self.client.session
+
 		url_1 = reverse('book_details',kwargs={'book_id':self.book_1.id})
 		data_1 = {'start_date':date.today(),'end_date':date.today()+timedelta(days=5)}
 		response_1 = self.client.post(url_1, data_1, follow=True)
@@ -78,6 +80,8 @@ class RentalAppViewTests(TestCase):
 		url_2 = reverse('book_details',kwargs={'book_id':self.book_2.id})
 		data_2 = {'start_date':date.today()+timedelta(days=2),'end_date':date.today()+timedelta(days=5)}
 		response_2 = self.client.post(url_2, data_2, follow=True)
+
+		self.assertEqual(len(session[settings.CART_SESSION_ID]), 2)
 
 		url_3 = reverse('checkout')
 		response_3 = self.client.get(url_3, follow=True)
@@ -114,3 +118,32 @@ class RentalAppViewTests(TestCase):
 
 		self.assertEqual(RentItem.objects.all().count(), 2)
 		self.assertEqual(response_3.status_code, 200)
+
+	def test_update_an_existing_item_in_the_cart(self):
+		session = self.client.session
+
+		url_1 = reverse('book_details',kwargs={'book_id':self.book_1.id})
+		data_1 = {'start_date':date.today(),'end_date':date.today()+timedelta(days=5)}
+		response_1 = self.client.post(url_1, data_1, follow=True)
+		
+		url_2 = reverse('book_details',kwargs={'book_id':self.book_1.id})
+		data_2 = {'start_date':date.today()+timedelta(days=2),'end_date':date.today()+timedelta(days=3)}
+		response_2 = self.client.post(url_2, data_2, follow=True)
+		
+		self.assertEqual(len(session[settings.CART_SESSION_ID]), 1)
+		self.assertEqual(response_1.status_code, 200)
+		self.assertEqual(response_2.status_code, 200)
+
+	def test_view_cart_function(self):
+		url = reverse('view_cart')
+		response = self.client.get(url)
+		self.assertEqual(response.status_code, 200)
+		self.assertTemplateUsed(response, 'rentalapp/cart.html')
+
+	def test_book_details(self):
+		url = reverse('book_details',kwargs={'book_id':self.book_1.id})
+		response = self.client.get(url)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertTemplateUsed(response, 'rentalapp/book_details.html')
+
