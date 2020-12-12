@@ -29,7 +29,8 @@ def book_details(request, book_id):
 			cart.add(book,start_date, stop_date)
 			return redirect('index')
 	else:
-		form = RentBookForm()
+		data = {"book_id":book_id}
+		form = RentBookForm(initial=data)
 
 	return render(request, 'rentalapp/book_details.html', {"book":book, "form":form})
 

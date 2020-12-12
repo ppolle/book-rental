@@ -1,7 +1,7 @@
 from .base import *
 
-DEBUG = True
+DEBUG = config('BOOKER_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('BOOKER_ALLOWED_HOSTS')
 
 SECRET_KEY = config('BOOKER_SECRET_KEY')
